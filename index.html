@@ -1,66 +1,89 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bootstrap Site</title>
-    <link rel="stylesheet" href="assets/bootstrap.min.css" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
-        integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
-        crossorigin="anonymous"></script>
-</head>
+    <link
+      rel="stylesheet"
+      href="assets/bootstrap.min.css"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+      integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+      crossorigin="anonymous"
+    ></script>
+  </head>
 
-<body>
-
-
-
+  <body>
     <div class="rounded m-4 container">
-        <div class="row">
-            <div class="position-absolute top-50 start-0 translate-middle col-md-7 offset-md-2">
-                <div class="border-0 card">
-                    <h5 class="text-center p-2 text-light bg-primary">Cotizador de seguros de autos</h5>
-                    <div class="shadow-lg card-body">
-                        <h6 class="text-warning card-title">Todos los campos son obligatorios</h6>
-                        <form action="cotizar" method="post">
-                            <div class="row-content-center form-group">
-                                <label for="marca">Marca</label>
-                                <select class="form-control" id="marca" name="marca">
-                                    <option value="1">Audi</option>
-                                    <option value="2">BMW</option>
-                                    <option value="3">Mercedes</option>
-                                    <option value="4">Volkswagen</option>
-                                </select>
-                            </div>
-                            <br>
-                            <div class="form-group">
-                                <label for="anio">Año</label>
-                                <select class="form-control" id="anio" name="a"></select>
-                            </div>
-                            <br>
-                            <div class="form-group">
-                                <label for="tipo">Tipo</label>
-                                <select class="form-control" id="tipo" name="tipo">
-                                    <option value="basico">Basico</option>
-                                    <option value="completo">Completo</option>
-                                </select>
-                            </div>
-                            <br>
-                            <button type="submit" class="offset-md-10 btn btn-primary">Cotizar</button>
-                        </form>
-                    </div>
+      <div class="row">
+        <div
+          class="position-absolute top-50 start-0 translate-middle col-md-7 offset-md-2"
+        >
+          <div class="border-0 card">
+            <h5 class="text-center p-2 text-light bg-primary">
+              Cotizador de seguros de autos
+            </h5>
+            <div class="shadow-lg card-body">
+              <h6 class="text-warning card-title">
+                Todos los campos son obligatorios
+              </h6>
+              <form action="cotizar" method="post">
+                <div class="row-content-center form-group">
+                  <label for="marca">Marca</label>
+                  <select class="form-control" placeholder="Seleccione" id="marca" name="marca">
+                    <option value="1">Audi</option>
+                    <option value="2">BMW</option>
+                    <option value="3">Mercedes</option>
+                    <option value="4">Volkswagen</option>
+                  </select>
                 </div>
+                <br />
+                <div class="form-group">
+                  <label for="anio">Año</label>
+                  <select placeholder="Seleccione" class="form-control" id="anio" name="a"></select>
+                </div>
+                <br />
+                <div class="form-group">
+                  <label for="">Tipo de seguro</label>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="riesgo"
+                      id="Básico"
+                      value="Básico"
+                    />
+                    <label class="form-check-label" for="Básico">Básico</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="riesgo"
+                      id="Completo"
+                      value="Completo"
+                    />
+                    <label class="form-check-label" for="Completo"
+                      >Completo</label
+                    >
+                  </div>
+                </div>
+                <br/>
+
+                <button type="submit" class="btn btn-primary">Cotizar</button>
+              </form>
             </div>
+          </div>
         </div>
+      </div>
     </div>
-
-
-
-
-
-</body>
-
+  </body>
 </html>
