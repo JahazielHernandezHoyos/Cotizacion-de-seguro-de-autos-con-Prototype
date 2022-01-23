@@ -35,30 +35,30 @@
               <h6 class="text-warning card-title">
                 Todos los campos son obligatorios
               </h6>
-              <form action="cotizar" method="post">
+              <form id="cotizar-seguro" action="cotizar" method="post">
                 <div class="row-content-center form-group">
                   <label for="marca">Marca</label>
                   <select class="form-control" placeholder="Seleccione" id="marca" name="marca">
-                    <option value="1">Audi</option>
-                    <option value="2">BMW</option>
-                    <option value="3">Mercedes</option>
-                    <option value="4">Volkswagen</option>
+                    <option value="">- Seleccionar -</option>
+                    <option value="1">Americano</option>
+                    <option value="2">Asiatico</option>
+                    <option value="3">Europeo</option>
                   </select>
                 </div>
                 <br />
                 <div class="form-group">
-                  <label for="anio">Año</label>
-                  <select placeholder="Seleccione" class="form-control" id="anio" name="a"></select>
+                  <label for="year">Año</label>
+                  <select placeholder="Seleccione" class="form-control" id="year" name="a"></select>
                 </div>
                 <br />
                 <div class="form-group">
-                  <label for="">Tipo de seguro</label>
+                  <label id="tipo" for="tipo">Tipo de seguro</label>
                   <div class="form-check">
-                    <input
+                    <input 
                       class="form-check-input"
                       type="radio"
-                      name="riesgo"
-                      id="Básico"
+                      name="tipo"
+                      id="tipo"
                       value="Básico"
                     />
                     <label class="form-check-label" for="Básico">Básico</label>
@@ -67,8 +67,8 @@
                     <input
                       class="form-check-input"
                       type="radio"
-                      name="riesgo"
-                      id="Completo"
+                      name="tipo"
+                      id="tipo"
                       value="Completo"
                     />
                     <label class="form-check-label" for="Completo"
@@ -85,5 +85,8 @@
         </div>
       </div>
     </div>
+
+
+    <script src="js/app.js"></script>
   </body>
 </html>
