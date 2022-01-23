@@ -51,16 +51,16 @@ Interfaz.prototype.mostrarMensaje = function(mensaje, tipo) {
     const div = document.createElement('div');
 
     if(tipo === 'error') {
-         div.classList.add('mensaje','error');
+         div.classList.add('alert','alert-danger', 'text-center');
     } else {
-         div.classList.add('mensaje','correcto');
+         div.classList.add('alert','alert-success', 'text-center');
     }
     div.classList.add('mt-10');
     div.innerHTML = `${mensaje}`;
     formulario.insertBefore(div, document.querySelector('#resultado')); // Nuevo Nodo y referencia... // Si la referencia no existe se añadira al final
 
     setTimeout( () =>  {
-         document.querySelector('.mensaje').remove();
+         document.querySelector('.alert').remove();
     }, 3000);
 } 
 
@@ -81,7 +81,7 @@ Interfaz.prototype.mostrarResultado = function(seguro, total) {
     }
     // Crear un div
     const div = document.createElement('div');
-    div.classList.add('mt-10')
+    div.classList.add("alert", "alert-primary", "text-center")
     // Insertar la informacion
     div.innerHTML = `
          <p class='header'>Tu Resumen: </p>
@@ -90,11 +90,9 @@ Interfaz.prototype.mostrarResultado = function(seguro, total) {
          <p class="font-bold">Tipo: <span class="font-normal"> ${seguro.tipo} </span> </p>
          <p class="font-bold"> Total: <span class="font-normal"> $ ${total} </span> </p>
     `;
+    // Insertar el div en el HTML
 
-    const spinner = document.querySelector('#cargando');
-    spinner.style.display = 'block';
     setTimeout( () =>  {
-         spinner.style.display = 'none';
          resultado.appendChild(div);
     }, 3000);
     
@@ -154,7 +152,7 @@ formulario.addEventListener('submit', e =>  {
          const cantidad = seguro.cotizarSeguro();
          // Mostrar el resultado
          interfaz.mostrarResultado(seguro, cantidad);
-         interfaz.mostrarMensaje('Cotizando...', 'exito');
+         interfaz.mostrarMensaje('Cotizando...', 'alert');
     }
 
 });
